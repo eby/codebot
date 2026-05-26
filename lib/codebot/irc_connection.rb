@@ -5,6 +5,7 @@ require 'codebot/thread_controller'
 require 'codebot/ext/cinch/ssl_extensions'
 require 'cinch'
 require 'cinch/plugins/identify'
+require 'codebot/patches/cinch_ruby3'
 
 module Codebot
   # This class manages an IRC connection running in a separate thread.

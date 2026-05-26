@@ -49,4 +49,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'irb', '>= 1.0'
   spec.add_runtime_dependency 'sinatra', '>= 2.2', '< 5'
   spec.add_runtime_dependency 'thor', '>= 0.20', '< 2'
+  spec.add_runtime_dependency 'webrick', '~> 1.8'
 end

@@ -16,7 +16,7 @@ RUN bundle config set --local without development \
 COPY lib/ lib/
 COPY exe/ exe/
 
-RUN useradd --system --no-create-home --shell /usr/sbin/nologin codebot \
+RUN useradd --system --create-home --shell /usr/sbin/nologin codebot \
     && chown -R codebot:codebot /app
 
 USER codebot
