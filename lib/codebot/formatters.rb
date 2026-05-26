@@ -3,6 +3,7 @@
 require 'cinch'
 require 'codebot/formatter'
 require 'codebot/formatters/commit_comment'
+require 'codebot/formatters/create'
 require 'codebot/formatters/fork'
 require 'codebot/formatters/gollum'
 require 'codebot/formatters/issue_comment'
@@ -52,6 +53,8 @@ module Codebot
       case event
       when :commit_comment
         Formatters::CommitComment.new(payload, Shortener::Github.new)
+      when :create
+        Formatters::Create.new(payload, Shortener::Github.new)
       when :fork
         Formatters::Fork.new(payload, Shortener::Github.new)
       when :gollum

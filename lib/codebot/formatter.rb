@@ -203,6 +203,13 @@ module Codebot
       action.eql? 'closed'
     end
 
+    # Checks whether the action is 'edited'.
+    #
+    # @return [Boolean] whether the action is 'edited'.
+    def edited?
+      action.eql? 'edited'
+    end
+
     def gitlab_opened?
       gitlab_action.eql? 'open'
     end

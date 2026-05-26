@@ -6,6 +6,7 @@ module Codebot
     # The currently supported events.
     VALID_SYMBOLS = %i[
       commit_comment
+      create
       fork
       gollum
       issue_comment
@@ -27,7 +28,6 @@ module Codebot
       gitlab_merge_request_hook
       gitlab_wiki_page_hook
     ].freeze
-    # TODO: Support for create
     # TODO: Support for delete
     # TODO: Support for deployment
     # TODO: Support for deployment_status

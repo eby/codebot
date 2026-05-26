@@ -11,7 +11,7 @@ module Codebot
       #
       # @return [Array<String>] the formatted messages
       def format
-        ["#{summary}: #{format_url url}"] if opened? || closed?
+        ["#{summary}: #{format_url url}"] if opened? || closed? || edited?
       end
 
       def summary
