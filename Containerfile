@@ -16,8 +16,10 @@ RUN bundle config set --local without development \
 COPY lib/ lib/
 COPY exe/ exe/
 
-# Mount /codebot.yml (or a directory containing it) to persist config
-VOLUME ["/codebot.yml"]
+RUN useradd --system --no-create-home --shell /usr/sbin/nologin codebot \
+    && chown -R codebot:codebot /app
+
+USER codebot
 
 # Must bind to 0.0.0.0 inside container; override port with CODEBOT_PORT
 ENV CODEBOT_BIND=0.0.0.0
