@@ -97,9 +97,11 @@ module Codebot
 
       secret = integration.secret
       if integration.gitlab
-        secret == request.env['HTTP_X_GITLAB_TOKEN']
+        Rack::Utils.secure_compare secret.to_s,
+                                   request.env['HTTP_X_GITLAB_TOKEN'].to_s
       else
-        request_signature = request.env['HTTP_X_HUB_SIGNATURE']
+        request_signature = request.env['HTTP_X_HUB_SIGNATURE_256'] ||
+                            request.env['HTTP_X_HUB_SIGNATURE']
         Cryptography.valid_signature?(payload, secret, request_signature)
       end
     end

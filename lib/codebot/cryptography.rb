@@ -23,6 +23,9 @@ module Codebot
 
     # Verifies a webhook signature.
     #
+    # Accepts either SHA-256 (X-Hub-Signature-256) or SHA-1
+    # (X-Hub-Signature) signatures. SHA-256 is preferred.
+    #
     # @param body [String] the webhook body
     # @param secret [String] the correct secret
     # @param signature [String] the signature to verify
@@ -30,8 +33,9 @@ module Codebot
     def self.valid_signature?(body, secret, signature)
       return false if signature.nil?
 
-      digest = OpenSSL::Digest.new 'sha1'
-      good_signature = 'sha1=' + OpenSSL::HMAC.hexdigest(digest, secret, body)
+      algo = signature.start_with?('sha256=') ? 'sha256' : 'sha1'
+      digest = OpenSSL::Digest.new algo
+      good_signature = "#{algo}=" + OpenSSL::HMAC.hexdigest(digest, secret, body)
       Rack::Utils.secure_compare good_signature, signature
     end
   end
