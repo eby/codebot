@@ -16,13 +16,13 @@ RUN bundle config set --local without development \
 COPY lib/ lib/
 COPY exe/ exe/
 
-# Config lives at ~/.codebot.yml; mount /root to persist it
-VOLUME ["/root"]
+# Mount /codebot.yml (or a directory containing it) to persist config
+VOLUME ["/codebot.yml"]
 
 # Must bind to 0.0.0.0 inside container; override port with CODEBOT_PORT
 ENV CODEBOT_BIND=0.0.0.0
 
 EXPOSE 4567
 
-ENTRYPOINT ["bundle", "exec", "exe/codebot"]
+ENTRYPOINT ["bundle", "exec", "exe/codebot", "--config", "/codebot.yml"]
 CMD ["core", "interactive"]
