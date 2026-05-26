@@ -26,5 +26,5 @@ ENV CODEBOT_BIND=0.0.0.0
 
 EXPOSE 4567
 
-ENTRYPOINT ["bundle", "exec", "exe/codebot", "--config", "/codebot.yml"]
-CMD ["core", "interactive"]
+ENTRYPOINT ["bundle", "exec", "exe/codebot"]
+CMD ["core", "interactive", "--config", "/codebot.yml"]
