@@ -20,7 +20,7 @@ module Codebot
           sender: format_user(sender_name),
           number: pull_number,
           hash: format_hash(commit_id),
-          short: prettify(comment_body)
+          summary: prettify(comment_body)
         }
       end
 
