@@ -25,9 +25,12 @@ Gem::Specification.new do |spec|
   spec.description   = description
   spec.homepage      = 'https://github.com/olabini/codebot'
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
+  git_files = `git ls-files -z 2>/dev/null`.split("\x0")
+  spec.files = if git_files.empty?
+                 Dir.glob('{exe,lib}/**/*').select { |f| File.file?(f) }
+               else
+                 git_files
+               end.reject { |f| f.match(%r{^(test|spec|features)/}) }
 
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
@@ -36,7 +39,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.6.0'
 
-  spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'bundler', '~> 2.4'
   spec.add_development_dependency 'rake', '>= 12.3'
   spec.add_development_dependency 'rspec', '~> 3.8'
   spec.add_development_dependency 'rubocop', '>= 0.65.0'
