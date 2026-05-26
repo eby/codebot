@@ -20,7 +20,7 @@ module Codebot
       # Starts a new Codebot instance in the background.
       def start
         Options.with_errors { check_fork_supported! }
-        check_not_running!(options)
+        check_not_running!(parent_options)
         fork { run_core(false) }
       end
 
@@ -28,14 +28,14 @@ module Codebot
 
       # Stops a running Codebot instance.
       def stop
-        Options.with_ipc_client(options, &:send_stop)
+        Options.with_ipc_client(parent_options, &:send_stop)
       end
 
       desc 'rehash', 'Reload the configuration of a running Codebot instance'
 
       # Reloads the configuration of a running Codebot instance.
       def rehash
-        Options.with_ipc_client(options, &:send_rehash)
+        Options.with_ipc_client(parent_options, &:send_rehash)
       end
 
       # Ensures that thor uses the correct exit code.
@@ -113,9 +113,9 @@ module Codebot
       # @param interactive [Boolean] whether to start the bot in the foreground
       def run_core(interactive)
         initialize_environment
-        check_not_running!(options)
+        check_not_running!(parent_options)
         dup2_fds unless interactive
-        Options.with_core(options) do |core|
+        Options.with_core(parent_options) do |core|
           core.trap_signals
           core.start
           core.join
