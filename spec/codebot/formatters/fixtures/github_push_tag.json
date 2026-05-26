@@ -1,0 +1,16 @@
+{
+  "ref": "refs/tags/v1.0.0",
+  "before": "0000000000000000000000000000000000000000",
+  "after": "85e7e30c96750e6f89e6b2df5da5e8fcb5e77d3a",
+  "forced": false,
+  "base_ref": null,
+  "compare": "https://github.com/octocat/Hello-World/compare/v1.0.0",
+  "repository": {
+    "name": "Hello-World",
+    "html_url": "https://github.com/octocat/Hello-World"
+  },
+  "pusher": {
+    "name": "octocat"
+  },
+  "commits": []
+}

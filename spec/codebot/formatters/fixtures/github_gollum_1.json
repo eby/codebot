@@ -1,0 +1,15 @@
+{
+  "pages": [
+    {
+      "action": "created",
+      "title": "Home",
+      "summary": "Initial setup",
+      "html_url": "https://github.com/octocat/Hello-World/wiki/Home"
+    }
+  ],
+  "sender": { "login": "octocat" },
+  "repository": {
+    "name": "Hello-World",
+    "html_url": "https://github.com/octocat/Hello-World"
+  }
+}

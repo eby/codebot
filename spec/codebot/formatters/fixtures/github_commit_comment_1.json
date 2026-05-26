@@ -1,0 +1,13 @@
+{
+  "action": "created",
+  "comment": {
+    "body": "Looks good to me",
+    "commit_id": "6dcb09b5b57875f334f61aebed695e2e4193db5e",
+    "html_url": "https://github.com/octocat/Hello-World/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e#commitcomment-1"
+  },
+  "sender": { "login": "octocat" },
+  "repository": {
+    "name": "Hello-World",
+    "html_url": "https://github.com/octocat/Hello-World"
+  }
+}

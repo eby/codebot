@@ -1,0 +1,15 @@
+{
+  "action": "opened",
+  "pull_request": {
+    "number": 42,
+    "title": "Amazing new feature",
+    "html_url": "https://github.com/octocat/Hello-World/pull/42",
+    "base": { "label": "octocat:master" },
+    "head": { "label": "monalisa:feature-branch" }
+  },
+  "sender": { "login": "monalisa" },
+  "repository": {
+    "name": "Hello-World",
+    "html_url": "https://github.com/octocat/Hello-World"
+  }
+}

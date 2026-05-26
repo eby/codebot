@@ -1,0 +1,13 @@
+{
+  "action": "closed",
+  "issue": {
+    "number": 7,
+    "title": "Found a bug",
+    "html_url": "https://github.com/octocat/Hello-World/issues/7"
+  },
+  "sender": { "login": "octocat" },
+  "repository": {
+    "name": "Hello-World",
+    "html_url": "https://github.com/octocat/Hello-World"
+  }
+}

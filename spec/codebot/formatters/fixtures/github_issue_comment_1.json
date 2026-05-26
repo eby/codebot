@@ -1,0 +1,13 @@
+{
+  "action": "created",
+  "issue": { "number": 7 },
+  "comment": {
+    "body": "This is a great comment",
+    "html_url": "https://github.com/octocat/Hello-World/issues/7#issuecomment-1"
+  },
+  "sender": { "login": "octocat" },
+  "repository": {
+    "name": "Hello-World",
+    "html_url": "https://github.com/octocat/Hello-World"
+  }
+}

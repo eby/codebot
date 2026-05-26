@@ -1,0 +1,8 @@
+{
+  "hook": {
+    "type": "Organization",
+    "events": ["*"]
+  },
+  "organization": { "login": "github" },
+  "sender": { "login": "octocat" }
+}

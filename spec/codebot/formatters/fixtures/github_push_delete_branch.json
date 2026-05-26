@@ -1,0 +1,16 @@
+{
+  "ref": "refs/heads/old-branch",
+  "before": "6dcb09b5b57875f334f61aebed695e2e4193db5e",
+  "after": "0000000000000000000000000000000000000000",
+  "forced": false,
+  "base_ref": null,
+  "compare": "https://github.com/octocat/Hello-World/compare/old-branch",
+  "repository": {
+    "name": "Hello-World",
+    "html_url": "https://github.com/octocat/Hello-World"
+  },
+  "pusher": {
+    "name": "octocat"
+  },
+  "commits": []
+}

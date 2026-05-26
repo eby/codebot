@@ -1,0 +1,12 @@
+{
+  "forkee": {
+    "name": "Hello-World",
+    "html_url": "https://github.com/monalisa/Hello-World",
+    "owner": { "login": "monalisa" }
+  },
+  "sender": { "login": "monalisa" },
+  "repository": {
+    "name": "Hello-World",
+    "html_url": "https://github.com/octocat/Hello-World"
+  }
+}
